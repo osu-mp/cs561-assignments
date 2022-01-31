@@ -9,7 +9,7 @@ info:
   license:
     name: "Apache 2.0"
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
-host: "localhost:3000"
+host: "localhost:3002"
 basePath: "/"
 #tags:
 #- name: "pet"
@@ -25,18 +25,18 @@ basePath: "/"
 #    description: "Find out more about our store"
 #    url: "http://swagger.io"
 schemes:
-#- "https"
-- "http"
+  #- "https"
+  - "http"
 paths:
   /v1/weather:
     get:
       tags:
-      - "weather"
+        - "weather"
       summary: "Mock OpenWeather's GET endpoint"
       description: "Return mocked data from OpenWeather"
       operationId: "queryWeather"
       produces:
-      - "application/json"
+        - "application/json"
       #parameters: # no parameters
       responses:
         "200":
@@ -46,17 +46,17 @@ paths:
             example: "matt was here"
         "400":
           description: "Invalid status value"
-      
+
   /v1/hello:
     get:
       tags:
-      - "hello"
+        - "hello"
       summary: "Return a greeting"
       description: "Query for a greeting"
       operationId: "sayHello"
       produces:
-   #   - "application/xml"
-      - "application/json"
+        #   - "application/xml"
+        - "application/json"
       # parameters: # no parameters
       responses:
         "200":
@@ -66,28 +66,28 @@ paths:
             example: "Hello world"
         "400":
           description: "Invalid status value"
-          
+
   /v1/auth:
     get:
       tags:
-      - "auth"
+        - "auth"
       summary: "Accept username and password, return mock token"
       description: ""
       operationId: "loginUser"
       produces:
-      - "application/xml"
-      - "application/json"
+        - "application/xml"
+        - "application/json"
       parameters:
-      - name: "username"
-        in: "query"
-        description: "The user name for login"
-        required: true
-        type: "string"
-      - name: "password"
-        in: "query"
-        description: "The password for login in clear text"
-        required: true
-        type: "string"
+        - name: "username"
+          in: "query"
+          description: "The user name for login"
+          required: true
+          type: "string"
+        - name: "password"
+          in: "query"
+          description: "The password for login in clear text"
+          required: true
+          type: "string"
       responses:
         "200":
           description: "successful operation"
